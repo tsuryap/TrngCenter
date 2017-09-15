@@ -1,0 +1,17 @@
+.mainContainer {
+	margin-left: 30px;
+	margin-right: 30px;
+}
+
+.headerbrand {
+	color: white !important;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 20px;
+}
+.footer {
+	background-color: #222;
+	height: 50px;
+	color: #FFF;
+	padding: 10px;
+}

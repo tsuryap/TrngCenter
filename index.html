@@ -1,12 +1,24 @@
 <html ng-app='trngctr'>
 
 <head>
-   <script src='New folder/angular/angular.js'></script>
+   <link rel="stylesheet" href="styles/bootstrap.css">
+   <link rel="stylesheet" href="styles/app.css">
+   <script src='bower_components/angular/angular.js'></script>
    <script src='app/app.js'></script>
    <script src='app/components/main/MainCtrl.js'></script>
 </head>
 <body ng-controller="MainCtrl">
- {{test}}
+  <div class='mainContainer'>
+  	 <header ng-include="'app/components/nav/nav.html'">
+  	 </header>
+  	 <div>
+  	 	main body system
+  	 	dsfa
+
+  	 </div>
+  	 <footer ng-include="'app/components/nav/footer.html'">
+  	 </footer>
+  </div>
 </body>
 
 </html>
