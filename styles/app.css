@@ -4,7 +4,7 @@
 }
 
 .headerbrand {
-	color: white !important;
+	color: #FFF !important;
     font-style: italic;
     font-weight: bold;
     font-size: 20px;
@@ -14,4 +14,10 @@
 	height: 50px;
 	color: #FFF;
 	padding: 10px;
+}
+.navHeaders{
+	color: #fff !important;
+	font-size: 20px !important;
+	font-family: verdana;
+	font-style: italic;
 }

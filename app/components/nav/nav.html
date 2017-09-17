@@ -1,10 +1,8 @@
-<nav class='nav navbar-inverse'>
+<nav class='nav navbar-inverse' ng-controller="NavCtrl">
 	    <div class="navbar-header">
-	    	<a class="navbar-brand headerbrand">Online Training Center</a>
+	    	<a class="navbar-brand headerbrand" href='#!home'>{{appName}}</a>
 	    </div>
 	    <ul class="nav navbar-nav">
-	    	<li><a >Dashboard</a></li>
-            <li><a >Trainings</a></li>
-            <li><a >Admin</a></li>
-        </ul>
+	    	<li ng-repeat="item in navHeaders"><a class='navHeaders' href='{{item.href}}'>{{item.headerName}}</a></li>
+	    </ul>
 </nav>

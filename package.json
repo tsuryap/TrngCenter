@@ -1,0 +1,22 @@
+{
+  "name": "trngcenter",
+  "version": "1.0.0",
+  "description": "trianing center",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tsuryap/TrngCenter.git"
+  },
+  "author": "surya",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tsuryap/TrngCenter/issues"
+  },
+  "homepage": "https://github.com/tsuryap/TrngCenter#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1"
+  }
+}
