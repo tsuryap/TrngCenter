@@ -3,15 +3,15 @@ app.controller('NavCtrl', ['$scope',function($scope){
 	$scope.navHeaders = [
         {
         	headerName: 'Dashboard',
-        	href:'#!dashboard'
+        	href:'#dashboard'
         },
         {
         	headerName: 'Trainings',
-        	href:'#!trng'
+        	href:'#trng'
         },
         {
         	headerName: 'Admin',
-        	href:'#!admin'
+        	href:'#admin'
         }
 	];
 }]);

@@ -13,6 +13,13 @@ module.exports = function(grunt) {
                     "app/**/*.js"
                 ],
                 dest: 'build/<%= pkg.name %>.js',
+            },
+            cssFiles: {
+                src: [
+                    "styles/bootstrap.css",
+                    'styles/app.css'
+                ],
+                dest: 'build/<%= pkg.name %>.css',
             }
         }
     }); 

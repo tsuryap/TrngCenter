@@ -41780,8 +41780,26 @@ Object.defineProperty(exports, '__esModule', { value: true });
 })));
 //# sourceMappingURL=angular-ui-router.js.map
 
-var app = angular.module('trngctr', []);
+var app = angular.module('trngctr', ['ui.router']);
 
+app.config(['$stateProvider',function($stateProvider) {
+	$stateProvider.state('home',{
+		url: '/home',
+		template: '<h1> I am home state </h1>'
+	});
+	$stateProvider.state('dashboard',{
+		url: '/dashboard',
+		template: '<h1> I am Dashboard state </h1>'
+	});
+	$stateProvider.state('trng',{
+		url: '/trng',
+		template: '<h1> I am Training state </h1>'
+	});
+	$stateProvider.state('admin',{
+		url: '/admin',
+		template: '<h1> I am admin state </h1>'
+	});
+}]);
 app.controller('MainCtrl', ['$scope', function($scope){
 	$scope.test = 'I am from Main Ctrl';
 	$scope.gitTest = "I am from test";
@@ -41791,15 +41809,15 @@ app.controller('NavCtrl', ['$scope',function($scope){
 	$scope.navHeaders = [
         {
         	headerName: 'Dashboard',
-        	href:'#!dashboard'
+        	href:'#dashboard'
         },
         {
         	headerName: 'Trainings',
-        	href:'#!trng'
+        	href:'#trng'
         },
         {
         	headerName: 'Admin',
-        	href:'#!admin'
+        	href:'#admin'
         }
 	];
 }]);
