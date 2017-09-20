@@ -6778,3 +6778,8 @@ button.close {
 	font-family: verdana;
 	font-style: italic;
 }
+
+.active {
+	border-bottom-style: solid;
+    border-bottom-color: red;
+}

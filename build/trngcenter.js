@@ -41785,20 +41785,25 @@ var app = angular.module('trngctr', ['ui.router']);
 app.config(['$stateProvider',function($stateProvider) {
 	$stateProvider.state('home',{
 		url: '/home',
-		template: '<h1> I am home state </h1>'
+		templateUrl: 'app/components/home/home.html',
+		controller: 'HomeCtrl'
 	});
 	$stateProvider.state('dashboard',{
 		url: '/dashboard',
-		template: '<h1> I am Dashboard state </h1>'
+		templateUrl: 'app/components/dashboard/dashboard.html'
 	});
 	$stateProvider.state('trng',{
 		url: '/trng',
-		template: '<h1> I am Training state </h1>'
+		templateUrl: 'app/components/trng/trng.html',
+
 	});
 	$stateProvider.state('admin',{
 		url: '/admin',
-		template: '<h1> I am admin state </h1>'
+		templateUrl: 'app/components/admin/admin.html'
 	});
+}]);
+app.controller('HomeCtrl', ['$scope', function($scope){
+	$scope.test1 = 'I am home state from html file.';
 }]);
 app.controller('MainCtrl', ['$scope', function($scope){
 	$scope.test = 'I am from Main Ctrl';

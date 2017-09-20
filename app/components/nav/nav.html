@@ -3,6 +3,8 @@
 	    	<a class="navbar-brand headerbrand" href='#home'>{{appName}}</a>
 	    </div>
 	    <ul class="nav navbar-nav">
-	    	<li ng-repeat="item in navHeaders"><a class='navHeaders' href='{{item.href}}'>{{item.headerName}}</a></li>
+	    	<li><a class='navHeaders' ui-sref='dashboard'  ui-sref-active="active">Dashboard</a></li>
+	    	<li><a class='navHeaders' ui-sref='trng'  ui-sref-active="active">Trainings</a></li>
+	    	<li><a class='navHeaders' ui-sref='admin'  ui-sref-active="active">Admin</a></li>
 	    </ul>
 </nav>
