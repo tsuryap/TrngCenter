@@ -41802,9 +41802,13 @@ app.config(['$stateProvider',function($stateProvider) {
 		templateUrl: 'app/components/admin/admin.html'
 	});
 }]);
-app.controller('HomeCtrl', ['$scope', function($scope){
+app.controller('HomeCtrl', ['$scope','Constants',function($scope,Constants){
 	$scope.test1 = 'I am home state from html file.';
+	$scope.imageUrl = Constants.common_constants.homeImgUrl;
+	console.log($scope.imageUrl);
 }]);
+
+
 app.controller('MainCtrl', ['$scope', function($scope){
 	$scope.test = 'I am from Main Ctrl';
 	$scope.gitTest = "I am from test";
@@ -41825,4 +41829,10 @@ app.controller('NavCtrl', ['$scope',function($scope){
         	href:'#admin'
         }
 	];
+}]);
+app.service('Constants', ['$http', function($http){
+	this.common_constants = {
+		homeImgUrl : 'assests/images/home.jpg',
+		myappName : 'test'
+	}
 }]);

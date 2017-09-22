@@ -6783,3 +6783,11 @@ button.close {
 	border-bottom-style: solid;
     border-bottom-color: red;
 }
+.width100 {
+	width: 100%;
+}
+
+.homeImage {
+	padding-top: 2px;
+    padding-bottom: 10px;
+}

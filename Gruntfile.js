@@ -17,7 +17,8 @@ module.exports = function(grunt) {
             cssFiles: {
                 src: [
                     "styles/bootstrap.css",
-                    'styles/app.css'
+                    'styles/app.css',
+                    'styles/components/*.css'
                 ],
                 dest: 'build/<%= pkg.name %>.css',
             }
