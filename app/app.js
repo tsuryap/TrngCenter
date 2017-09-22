@@ -8,15 +8,17 @@ app.config(['$stateProvider',function($stateProvider) {
 	});
 	$stateProvider.state('dashboard',{
 		url: '/dashboard',
-		templateUrl: 'app/components/dashboard/dashboard.html'
+		templateUrl: 'app/components/dashboard/dashboard.html',
+		controller: 'DashboardCtrl'
 	});
 	$stateProvider.state('trng',{
 		url: '/trng',
 		templateUrl: 'app/components/trng/trng.html',
-
+		controller:'TrngCtrl'
 	});
 	$stateProvider.state('admin',{
 		url: '/admin',
-		templateUrl: 'app/components/admin/admin.html'
+		templateUrl: 'app/components/admin/admin.html',
+		controller :'AdminCtrl.js'
 	});
 }]);

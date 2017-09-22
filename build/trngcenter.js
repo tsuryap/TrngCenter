@@ -41790,17 +41790,25 @@ app.config(['$stateProvider',function($stateProvider) {
 	});
 	$stateProvider.state('dashboard',{
 		url: '/dashboard',
-		templateUrl: 'app/components/dashboard/dashboard.html'
+		templateUrl: 'app/components/dashboard/dashboard.html',
+		controller: 'DashboardCtrl'
 	});
 	$stateProvider.state('trng',{
 		url: '/trng',
 		templateUrl: 'app/components/trng/trng.html',
-
+		controller:'TrngCtrl'
 	});
 	$stateProvider.state('admin',{
 		url: '/admin',
-		templateUrl: 'app/components/admin/admin.html'
+		templateUrl: 'app/components/admin/admin.html',
+		controller :'AdminCtrl.js'
 	});
+}]);
+app.controller('AdminCtrl',['$scope',function($scope){
+	$scope.test1 = 'Iam from AdminCtrl';
+}]);
+app.controller('DashboardCtrl',['$scope',function($scope){
+	$scope.test1 = 'I am from DashboardCtrl';
 }]);
 app.controller('HomeCtrl', ['$scope','Constants',function($scope,Constants){
 	$scope.test1 = 'I am home state from html file.';
@@ -41830,6 +41838,9 @@ app.controller('NavCtrl', ['$scope',function($scope){
         }
 	];
 }]);
+app.controller('TrngCtrl',['$scope',function($scope){
+	$scope.test1 = 'I am from trng html';
+}])
 app.service('Constants', ['$http', function($http){
 	this.common_constants = {
 		homeImgUrl : 'assests/images/home.jpg',
