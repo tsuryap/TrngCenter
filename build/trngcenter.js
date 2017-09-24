@@ -41801,11 +41801,12 @@ app.config(['$stateProvider',function($stateProvider) {
 	$stateProvider.state('admin',{
 		url: '/admin',
 		templateUrl: 'app/components/admin/admin.html',
-		controller :'AdminCtrl.js'
+		controller :'AdminCtrl'
 	});
 }]);
 app.controller('AdminCtrl',['$scope',function($scope){
-	$scope.test1 = 'Iam from AdminCtrl';
+	//$scope.test10 = 'Iam from AdminCtrl';
+	$scope.test1 = 'I am from trng html';
 }]);
 app.controller('DashboardCtrl',['$scope',function($scope){
 	$scope.test1 = 'I am from DashboardCtrl';
@@ -41840,7 +41841,7 @@ app.controller('NavCtrl', ['$scope',function($scope){
 }]);
 app.controller('TrngCtrl',['$scope',function($scope){
 	$scope.test1 = 'I am from trng html';
-}])
+}]);
 app.service('Constants', ['$http', function($http){
 	this.common_constants = {
 		homeImgUrl : 'assests/images/home.jpg',

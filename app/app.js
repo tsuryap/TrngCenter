@@ -19,6 +19,6 @@ app.config(['$stateProvider',function($stateProvider) {
 	$stateProvider.state('admin',{
 		url: '/admin',
 		templateUrl: 'app/components/admin/admin.html',
-		controller :'AdminCtrl.js'
+		controller :'AdminCtrl'
 	});
 }]);
