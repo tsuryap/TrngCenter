@@ -1,2 +1,3 @@
 #Specify the files or directories to ignore to push.
 node_modules
+build

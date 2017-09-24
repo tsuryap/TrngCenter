@@ -22,8 +22,27 @@ module.exports = function(grunt) {
                 ],
                 dest: 'build/<%= pkg.name %>.css',
             }
+        },
+        ngtemplates: {
+            common: {
+                src: ['app/**/*.html'],
+                dest: 'build/all-templates.js',
+                options: {
+                    htmlmin: {
+                        collapseBooleanAttributes: true,
+                        collapseWhitespace: true,
+                        removeAttributeQuotes: true,
+                        removeComments: true, // Only if you don't use comment directives!
+                        removeEmptyAttributes: true,
+                        removeRedundantAttributes: true,
+                        removeScriptTypeAttributes: true,
+                        removeStyleLinkTypeAttributes: true
+                    }
+                }
+            }
         }
     }); 
     grunt.loadNpmTasks('grunt-contrib-concat');
-    grunt.registerTask('default', ['concat']);
+    grunt.loadNpmTasks('grunt-angular-templates');
+    grunt.registerTask('default', ['concat','ngtemplates']);
 };

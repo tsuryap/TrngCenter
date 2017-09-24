@@ -6812,11 +6812,9 @@ button.close {
     padding: 15px;
     box-sizing: border-box;
 }
-.myDashboard{
-	background-image: 'assests/images/home.jpg';
-}
 
 .homeImage {
 	padding-top: 2px;
     padding-bottom: 10px;
+    height: 500px;
 }

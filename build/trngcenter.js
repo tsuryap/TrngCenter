@@ -41780,9 +41780,10 @@ Object.defineProperty(exports, '__esModule', { value: true });
 })));
 //# sourceMappingURL=angular-ui-router.js.map
 
-var app = angular.module('trngctr', ['ui.router']);
+angular.module('common',[]);
+var app = angular.module('trngctr', ['ui.router','common']);
 
-app.config(['$stateProvider',function($stateProvider) {
+app.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRouterProvider) {
 	$stateProvider.state('home',{
 		url: '/home',
 		templateUrl: 'app/components/home/home.html',
@@ -41803,7 +41804,9 @@ app.config(['$stateProvider',function($stateProvider) {
 		templateUrl: 'app/components/admin/admin.html',
 		controller :'AdminCtrl'
 	});
+	$urlRouterProvider.otherwise('/home');
 }]);
+
 app.controller('AdminCtrl',['$scope',function($scope){
 	//$scope.test10 = 'Iam from AdminCtrl';
 	$scope.test1 = 'I am from trng html';

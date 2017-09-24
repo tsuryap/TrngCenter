@@ -1,6 +1,7 @@
-var app = angular.module('trngctr', ['ui.router']);
+angular.module('common',[]);
+var app = angular.module('trngctr', ['ui.router','common']);
 
-app.config(['$stateProvider',function($stateProvider) {
+app.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRouterProvider) {
 	$stateProvider.state('home',{
 		url: '/home',
 		templateUrl: 'app/components/home/home.html',
@@ -21,4 +22,5 @@ app.config(['$stateProvider',function($stateProvider) {
 		templateUrl: 'app/components/admin/admin.html',
 		controller :'AdminCtrl'
 	});
+	$urlRouterProvider.otherwise('/home');
 }]);
