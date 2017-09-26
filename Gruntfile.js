@@ -40,9 +40,25 @@ module.exports = function(grunt) {
                     }
                 }
             }
+        },
+        copy:{
+            build:{
+                files: [{
+                    expand: true,
+                    src: ["index.html", "assests/**"],
+                    dest: 'build/'
+                },{
+                    expand: true,
+                    flatten: true,
+                    src: ['bower_components/angular-ui-grid/*.{ttf,woff,eot,svg}'],
+                    dest: 'build/',
+                    filter: 'isFile'
+                }]
+            }
         }
     }); 
     grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-angular-templates');
     grunt.registerTask('default', ['concat','ngtemplates']);
 };
