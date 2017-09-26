@@ -55,3 +55,12 @@
     padding: 15px;
     box-sizing: border-box;
 }
+
+.red {
+    background-color: red;
+    color: white;
+}
+.blue{
+    background-color: blue;
+    color: white;
+}

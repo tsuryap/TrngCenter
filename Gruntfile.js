@@ -47,18 +47,23 @@ module.exports = function(grunt) {
                     expand: true,
                     src: ["index.html", "assests/**"],
                     dest: 'build/'
-                },{
-                    expand: true,
-                    flatten: true,
-                    src: ['bower_components/angular-ui-grid/*.{ttf,woff,eot,svg}'],
-                    dest: 'build/',
-                    filter: 'isFile'
                 }]
+            }
+        },
+        watch: {
+            css: {
+                files: ['styles/**/*.css', 'app/**/*.html', "index.html"],
+                tasks: ['concat','ngtemplates','copy']
+            },
+            js: {
+                files: ['app/**/*.js'],
+                tasks: ['concat','ngtemplates','copy']
             }
         }
     }); 
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-angular-templates');
-    grunt.registerTask('default', ['concat','ngtemplates']);
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.registerTask('default', ['concat','ngtemplates','copy']);
 };

@@ -6813,6 +6813,14 @@ button.close {
     box-sizing: border-box;
 }
 
+.red {
+    background-color: red;
+    color: white;
+}
+.blue{
+    background-color: blue;
+    color: white;
+}
 .homeImage {
 	padding-top: 2px;
     padding-bottom: 10px;
