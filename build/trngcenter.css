@@ -6821,8 +6821,23 @@ button.close {
     background-color: blue;
     color: white;
 }
+.dashboard {
+	padding-top: 10px;
+	width: 100%;
+}
+.dashboard .font-size-15{
+	font-size: 15px;
+}
+.dashboard .trngbox{
+	padding: 0px 15px 0px 15px;
+}
+
 .homeImage {
 	padding-top: 2px;
     padding-bottom: 10px;
     height: 500px;
+}
+
+.margin-top-10{
+	margin-top: 10px;
 }
