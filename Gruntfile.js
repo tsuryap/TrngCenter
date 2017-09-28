@@ -59,11 +59,20 @@ module.exports = function(grunt) {
                 files: ['app/**/*.js'],
                 tasks: ['concat','ngtemplates','copy']
             }
+        },
+        uglify: {
+            dist: {
+                files: {
+                    'build/all-templates.js': 'build/all-templates.js',
+                    'build/trngcenter.js': 'build/trngcenter.js'
+                }
+            }
         }
     }); 
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-angular-templates');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.registerTask('default', ['concat','ngtemplates','copy']);
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.registerTask('default', ['concat','ngtemplates','copy','uglify']);
 };
