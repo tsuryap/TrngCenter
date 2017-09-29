@@ -74,5 +74,5 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-angular-templates');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.registerTask('default', ['concat','ngtemplates','copy','uglify']);
+    grunt.registerTask('default', ['concat','ngtemplates','copy']);
 };
