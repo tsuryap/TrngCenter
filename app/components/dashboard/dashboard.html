@@ -1,32 +1,28 @@
 <div class='container dashboard'>
-	<div class='trngbox bg-info'>
-      <div class="row ">
-      	  <div class='col-md-6'>
-      	  	<span class="label label-primary font-size-15">Training Name&nbsp;&nbsp;</span> Test
-      	  </div>
-      	  <div class='col-md-6'>
-      	  	<span class="label  label-success font-size-15">Tutor Name&nbsp;&nbsp;</span> Test
-      	  </div>
-      </div>
-      <div class="row margin-top-10">
-      	 <div class="col-md-12 well">
-      	 	I am description of the training going on .
-      	 </div>
-      </div>
-    </div>
-    <div class='trngbox bg-info'>
-      <div class="row ">
-              <div class='col-md-6'>
-                  <span class="label label-primary font-size-15">Training Name&nbsp;&nbsp;</span> Test
-              </div>
-              <div class='col-md-6'>
-                  <span class="label  label-success font-size-15">Tutor Name&nbsp;&nbsp;</span> Test
-              </div>
-      </div>
-      <div class="row margin-top-10">
-             <div class="col-md-12 well">
-                  I am description of the training going on .
-             </div>
-      </div>
+    <div class="row margin-top-10" ng-repeat='item in traingList'>
+        <div class="col-md-1">
+            <div class='glyphicon glyphicon-triangle-top font-size-30'>
+            </div>
+            <div class='width100'>
+              <div class='badge margin-left-5'>0</div>
+            </div>
+            <div class='glyphicon glyphicon-triangle-bottom font-size-30'>
+            </div>
+        </div>
+        <div class="col-md-11 trngbox panel panel-info">
+            <div class="row panel-heading ">
+                <div class='col-md-6'>
+                    <span class="label label-primary font-size-15">Training Name&nbsp;&nbsp;</span>{{item.trngName}}
+                </div>
+                <div class='col-md-6'>
+                    <span class="label  label-success font-size-15">Tutor Name&nbsp;&nbsp;</span> {{item.tutorName}}
+                </div>
+            </div>
+            <div class="row margin-top-10 panel-body">
+                <div class="col-md-12">
+                    <p>I am description of the training going on .</p>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

@@ -1,4 +1,5 @@
 module.exports = function(grunt) {
+    var production = false;
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         concat: {
@@ -45,7 +46,11 @@ module.exports = function(grunt) {
             build:{
                 files: [{
                     expand: true,
-                    src: ["index.html", "assests/**"],
+                    src: ["index.html", "assests/images"],
+                    dest: 'build/'
+                },{
+                    expand: false,
+                    src: ["assests/fonts"],
                     dest: 'build/'
                 }]
             }
@@ -68,11 +73,15 @@ module.exports = function(grunt) {
                 }
             }
         }
-    }); 
+    });
+    var taskList = ['concat','ngtemplates','copy'];
+    if(production) {
+        taskList.push('uglify');
+    }
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-angular-templates');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.registerTask('default', ['concat','ngtemplates','copy']);
+    grunt.registerTask('default', taskList);
 };

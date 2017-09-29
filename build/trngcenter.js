@@ -41812,7 +41812,15 @@ app.controller('AdminCtrl',['$scope',function($scope){
 	$scope.test1 = 'I am from trng html';
 }]);
 app.controller('DashboardCtrl',['$scope',function($scope){
-	$scope.test1 = 'I am from DashboardCtrl';
+	$scope.traingList = [
+ 		{
+ 			trngName: 'Angular 1.x Complete walkthrough',
+ 			tutorName: 'Surya',
+ 			votes: 0,
+ 			date: undefined
+
+ 		}
+	];
 }]);
 app.controller('HomeCtrl', ['$scope','Constants',function($scope,Constants){
 	$scope.test1 = 'I am home state from html file.';

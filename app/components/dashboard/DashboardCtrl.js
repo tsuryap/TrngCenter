@@ -1,3 +1,11 @@
 app.controller('DashboardCtrl',['$scope',function($scope){
-	$scope.test1 = 'I am from DashboardCtrl';
+	$scope.traingList = [
+ 		{
+ 			trngName: 'Angular 1.x Complete walkthrough',
+ 			tutorName: 'Surya',
+ 			votes: 0,
+ 			date: undefined
+
+ 		}
+	];
 }]);

@@ -6783,9 +6783,7 @@ button.close {
 	border-bottom-style: solid;
     border-bottom-color: red;
 }
-.width100 {
-	width: 100%;
-}
+
 .myDiv{
 	background-color: #337ab7!important;
 	color: #fff!important;	
@@ -6821,6 +6819,20 @@ button.close {
     background-color: blue;
     color: white;
 }
+.margin-top-10{
+	margin-top: 10px;
+}
+.margin-left-5 {
+	margin-left: 5px;
+}
+/* fonts */
+.font-size-30 {
+	font-size: 30px;
+}
+
+.width100 {
+	width: 100%;
+}
 .dashboard {
 	padding-top: 10px;
 	width: 100%;
@@ -6836,8 +6848,4 @@ button.close {
 	padding-top: 2px;
     padding-bottom: 10px;
     height: 500px;
-}
-
-.margin-top-10{
-	margin-top: 10px;
 }
