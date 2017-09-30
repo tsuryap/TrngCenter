@@ -51,14 +51,8 @@ module.exports = function(grunt) {
                 },{ // fonts folder should be at css file level(bootstrap looks for fonts folder )
                     expand: true,
                     flatten: true,
-                    src: ["assests/fonts"],
-                    dest: 'build/'
-                },
-                { 
-                    expand: true,
-                    flatten: true,
                     src: ["assests/fonts/**"],
-                    dest: 'build/fonts',
+                    dest: 'build/fonts/',
                     filter: 'isFile'
                 }]
             }

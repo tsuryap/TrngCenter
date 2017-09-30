@@ -6755,6 +6755,9 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+body{
+    font-family: cursive;
+}
 .mainContainer {
 	margin-left: 30px;
 	margin-right: 30px;
@@ -6818,6 +6821,11 @@ button.close {
 .blue{
     background-color: blue;
     color: white;
+}
+
+.navbar-inverse {
+    background-color: #3c8dbc;
+    border-color: #080808;
 }
 .margin-top-10{
 	margin-top: 10px;
