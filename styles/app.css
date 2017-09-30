@@ -1,5 +1,6 @@
 body{
     font-family: cursive;
+    background-color: #e9e2e2;
 }
 .mainContainer {
 	margin-left: 30px;
@@ -65,7 +66,14 @@ body{
     background-color: blue;
     color: white;
 }
-
+.green{
+    background-color: #8BC34A !important;
+    color: #fff !important;
+}
+.thickBlue {
+    background-color:  #00BCD4 !important;
+    color: #fff !important;
+}
 .navbar-inverse {
     background-color: #3c8dbc;
     border-color: #080808;
