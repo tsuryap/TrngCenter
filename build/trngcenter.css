@@ -6757,11 +6757,13 @@ button.close {
 /*# sourceMappingURL=bootstrap.css.map */
 body{
     font-family: cursive;
-    background-color: #e9e2e2;
+  
 }
 .mainContainer {
-	margin-left: 30px;
-	margin-right: 30px;
+    box-shadow: 0 0 30px black;
+    padding: 0px;
+    margin-top:15px;
+    margin-bottom: 15px;
 }
 
 .headerbrand {
@@ -6852,6 +6854,7 @@ body{
 .dashboard {
 	padding-top: 10px;
 	width: 100%;
+	background-color: white;
 }
 .dashboard .font-size-15{
 	font-size: 15px;
@@ -6860,8 +6863,14 @@ body{
 	padding: 0px 15px 0px 15px;
 }
 
+.home{
+	background-color: white;
+}
 .homeImage {
 	padding-top: 2px;
     padding-bottom: 10px;
     height: 500px;
+}
+.homePods {
+	margin: 0px 10px 0px 10px;
 }

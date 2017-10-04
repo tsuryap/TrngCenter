@@ -1,5 +1,11 @@
+.home{
+	background-color: white;
+}
 .homeImage {
 	padding-top: 2px;
     padding-bottom: 10px;
     height: 500px;
+}
+.homePods {
+	margin: 0px 10px 0px 10px;
 }

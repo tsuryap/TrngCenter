@@ -1,10 +1,12 @@
 body{
     font-family: cursive;
-    background-color: #e9e2e2;
+  
 }
 .mainContainer {
-	margin-left: 30px;
-	margin-right: 30px;
+    box-shadow: 0 0 30px black;
+    padding: 0px;
+    margin-top:15px;
+    margin-bottom: 15px;
 }
 
 .headerbrand {
