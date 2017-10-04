@@ -41811,16 +41811,29 @@ app.controller('AdminCtrl',['$scope',function($scope){
 	//$scope.test10 = 'Iam from AdminCtrl';
 	$scope.test1 = 'I am from trng html';
 }]);
-app.controller('DashboardCtrl',['$scope',function($scope){
-	$scope.traingList = [
- 		{
- 			trngName: 'Angular 1.x Complete walkthrough',
- 			tutorName: 'Surya',
- 			votes: 0,
- 			date: undefined
+app.controller('DashboardCtrl',['$scope','DashboardService',function($scope,DashboardService){
+	$scope.traingList = DashboardService.traingList;
+}]);
+app.factory('DashboardService', ['$http', function($http) {
+    var obj = {
+        traingList: [{
+                trngName: 'Angular 1.x Complete walkthrough',
+                tutorName: 'Surya',
+                votes: 0,
+                date: undefined
 
- 		}
-	];
+            },
+            {
+                trngName: 'Angular 2.x Complete walkthrough',
+                tutorName: 'Test',
+                votes: 0,
+                date: undefined
+
+            }
+        ],
+        test: 'testapp'
+    };
+    return obj;
 }]);
 app.controller('HomeCtrl', ['$scope','Constants',function($scope,Constants){
 	$scope.test1 = 'I am home state from html file.';

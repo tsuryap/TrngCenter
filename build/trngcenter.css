@@ -6860,7 +6860,8 @@ body{
 	font-size: 15px;
 }
 .dashboard .trngbox{
-	padding: 0px 15px 0px 15px;
+	margin: 10px 15px 10px 15px;
+	box-shadow: 0 0 30px black;
 }
 
 .home{
