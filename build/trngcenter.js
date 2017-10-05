@@ -41813,6 +41813,9 @@ app.controller('AdminCtrl',['$scope',function($scope){
 }]);
 app.controller('DashboardCtrl',['$scope','DashboardService',function($scope,DashboardService){
 	$scope.traingList = DashboardService.traingList;
+	$scope.doVote = function(voteType, trngItem) {
+		(voteType === 'up') ? trngItem.votes++ : trngItem.votes--;
+	}
 }]);
 app.factory('DashboardService', ['$http', function($http) {
     var obj = {
@@ -41864,7 +41867,7 @@ app.controller('NavCtrl', ['$scope',function($scope){
 	];
 }]);
 app.controller('TrngCtrl',['$scope',function($scope){
-	$scope.test1 = 'I am from trng html';
+	
 }]);
 app.service('Constants', ['$http', function($http){
 	this.common_constants = {

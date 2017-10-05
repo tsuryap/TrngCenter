@@ -1,12 +1,12 @@
 <div class='container dashboard'>
     <div class="row margin-top-10 trngBox" ng-repeat='item in traingList'>
         <div class="col-md-1">
-            <div class='glyphicon glyphicon-triangle-top font-size-30'>
+            <div class='glyphicon glyphicon-triangle-top font-size-30 cursorPointer' ng-click='doVote("up",item)'>
             </div>
             <div class='width100'>
-              <div class='badge margin-left-5'>0</div>
+              <div class='badge margin-left-5'>{{item.votes}}</div>
             </div>
-            <div class='glyphicon glyphicon-triangle-bottom font-size-30'>
+            <div class='glyphicon glyphicon-triangle-bottom font-size-30 cursorPointer' ng-click='doVote("down",item)'>
             </div>
         </div>
         <div class="col-md-10 trngbox panel panel-info">

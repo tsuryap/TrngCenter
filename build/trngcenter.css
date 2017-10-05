@@ -6837,6 +6837,9 @@ body{
     background-color: #3c8dbc;
     border-color: #080808;
 }
+.cursorPointer {
+	cursor: pointer;
+}
 .margin-top-10{
 	margin-top: 10px;
 }
@@ -6861,7 +6864,7 @@ body{
 }
 .dashboard .trngbox{
 	margin: 10px 15px 10px 15px;
-	box-shadow: 0 0 30px black;
+	box-shadow: 0 0 10px black;
 }
 
 .home{
@@ -6874,4 +6877,8 @@ body{
 }
 .homePods {
 	margin: 0px 10px 0px 10px;
+}
+
+.training .trngpod{
+	margin: 20px 30px 20px 30px;
 }
