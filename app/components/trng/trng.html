@@ -6,13 +6,13 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="usr">Training Name:</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" ng-model='trainingName'>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="usr">Tutor Name:</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" ng-model='tutorName'>
                     </div>
                 </div>
             </div>
@@ -20,16 +20,16 @@
                 <div class="col-md-12">
                     <div class="form-group">
                         <label for="comment">Description:</label>
-                        <textarea class="form-control" rows="5"></textarea>
+                        <textarea class="form-control" rows="5" ng-model='description'></textarea>
                     </div>
                 </div>
             </div>
             <div class='row'>
             	<div class='col-md-1'>
-            		<button type="button" class="btn btn-primary">Save</button>
+            		<button type="button" class="btn btn-primary" ng-click='saveForm()'>Save</button>
             	</div>
             	<div class='col-md-1'>
-            		<button type="button" class="btn btn-default">Reset</button>
+            		<button type="button" class="btn btn-default" ng-click='resetForm()'>Reset</button>
             	</div>
             </div>
         </div>

@@ -10,3 +10,7 @@
 	margin: 10px 15px 10px 15px;
 	box-shadow: 0 0 10px black;
 }
+.dashboard.panel-padd-6{
+	padding: 6px 6px 6px 6px;
+	color: red;
+}

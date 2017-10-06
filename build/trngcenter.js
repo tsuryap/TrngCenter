@@ -41867,7 +41867,14 @@ app.controller('NavCtrl', ['$scope',function($scope){
 	];
 }]);
 app.controller('TrngCtrl',['$scope',function($scope){
-	
+	$scope.resetForm = function(){
+		$scope.trainingName = '';
+		$scope.tutorName = '';
+		$scope.description = '';
+	};
+	$scope.saveForm = function(){
+		
+	}	
 }]);
 app.service('Constants', ['$http', function($http){
 	this.common_constants = {
