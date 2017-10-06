@@ -63,7 +63,7 @@ module.exports = function(grunt) {
                 tasks: ['concat','ngtemplates','copy']
             },
             js: {
-                files: ['app/**/*.js'],
+                files: ['app/**/*.js','app/directives/*.js'],
                 tasks: ['concat','ngtemplates','copy']
             }
         },

@@ -6837,6 +6837,9 @@ body{
     background-color: #3c8dbc;
     border-color: #080808;
 }
+.redClr{
+    color: red;
+}
 .cursorPointer {
 	cursor: pointer;
 }

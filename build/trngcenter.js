@@ -41868,14 +41868,34 @@ app.controller('NavCtrl', ['$scope',function($scope){
 }]);
 app.controller('TrngCtrl',['$scope',function($scope){
 	$scope.resetForm = function(){
-		$scope.trainingName = '';
-		$scope.tutorName = '';
-		$scope.description = '';
+		$scope.trngObj = {};
 	};
 	$scope.saveForm = function(){
 		
-	}	
+	};	
 }]);
+app.directive('starSymbol', function(){
+	// Runs during compile
+	return {
+		restrict: 'E',
+		template: '<span class="redClr">*</span>',
+		// name: '',
+		// priority: 1,
+		// terminal: true,
+		// scope: {}, // {} = isolate, true = child, false/undefined = no change
+		// controller: function($scope, $element, $attrs, $transclude) {},
+		// require: 'ngModel', // Array = multiple requires, ? = optional, ^ = check parent elements
+		// restrict: 'A', // E = Element, A = Attribute, C = Class, M = Comment
+		// template: '',
+		// templateUrl: '',
+		// replace: true,
+		// transclude: true,
+		/*// compile: function(tElement, tAttrs, function transclude(function(scope, cloneLinkingFn){ return function linking(scope, elm, attrs){}})),
+		link: function($scope, iElm, iAttrs, controller) {
+			
+		}*/
+	};
+});
 app.service('Constants', ['$http', function($http){
 	this.common_constants = {
 		homeImgUrl : 'assests/images/home.jpg',
