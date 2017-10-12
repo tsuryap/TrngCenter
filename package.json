@@ -24,6 +24,7 @@
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-uglify": "^3.1.0",
     "grunt-contrib-watch": "^1.0.0",
+    "grunt-reload-chrome": "^0.1.4",
     "uglify-js": "^3.1.2"
   },
   "dependencies": {
