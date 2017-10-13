@@ -1,5 +1,5 @@
 angular.module('common',[]);
-var app = angular.module('trngctr', ['ui.router','common']);
+var app = angular.module('trngctr', ['ui.router','common','ngMessages']);
 
 app.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRouterProvider) {
 	$stateProvider.state('home',{

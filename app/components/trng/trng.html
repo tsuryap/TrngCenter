@@ -2,7 +2,7 @@
     <div class="panel panel-info trngpod">
         <div class="panel-heading">Add/Update Training</div>
         <div class="panel-body">
-           <form name='trngForm' novalidate>
+           <form name='trngForm'>
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
@@ -11,8 +11,10 @@
                         <label for="usr"><star-symbol></star-symbol>  Training Name:</label>
                         </div>
                         <div class="col-md-6">
-                        <div class='redClr' ng-show='trngForm.trngName.$error.required == true && trngForm.trngName.$touched'> <b>This field is mandatory</b></div>
-                        <div class='redClr' ng-show='trngForm.trngName.$error.maxlength == true && trngForm.trngName.$touched' ><b> Max Length exceeded</b></div>
+                        <div ng-messages='trngForm.trngName.$error' ng-if='trngForm.trngName.$touched'>
+                        	<div  class='redClr' ng-message="required"> <b>This field is mandatory</b></div>
+                            <div  class='redClr' ng-message="maxlength"><b> Max Length exceeded</b></div>
+                        </div>
                         </div>
                         </div>
                         <input type="text" class="form-control" ng-model='trngObj.trngName' name='trngName' ng-required=true ng-maxlength=100>                        

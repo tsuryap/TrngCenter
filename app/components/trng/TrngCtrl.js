@@ -1,23 +1,11 @@
-app.controller('TrngCtrl',['$scope',function($scope){
+app.controller('TrngCtrl',['$scope','UtilServices',function($scope,UtilServices){
 	$scope.resetForm = function(form){
 		$scope.trngObj = {};
-		var errorObj = form.$error;
-			for(var key in errorObj) {
-				var array = errorObj[key];
-				for(var i= 0;i< array.length;i++){
-					array[i].$touched = false;
-				}
-		 }
+		UtilServices.hideOrShowErrors(form,false);
 	};
 	$scope.saveForm = function(form){
 		if(form.$invalid) {
-			var errorObj = form.$error;
-			for(var key in errorObj) {
-				var array = errorObj[key];
-				for(var i= 0;i< array.length;i++){
-					array[i].$touched = true;
-				}
-			}
+			UtilServices.hideOrShowErrors(form,true);
 			return false;
 		}
 
