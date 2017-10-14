@@ -42610,11 +42610,7 @@ app.controller('TrngCtrl',['$scope','UtilServices','DashboardService','$timeout'
 	$scope.status = UtilServices.getSuccessObj();
 	$scope.resetForm = function(form){
 		UtilServices.hideOrShowErrors(form,false);
-		$scope.trngObj = {
-			trngName: '',
-			tutorName: '',
-			description: ''
-		};
+		$scope.trngObj = {};
 	};
 	$scope.saveForm = function(form){
 		if(form.$invalid) {
@@ -42667,15 +42663,7 @@ app.factory('UtilServices', function() {
 
 	var obj = {
 		hideOrShowErrors: function(form, touched) {
-			var errorObj = form.$error;
-			for (var key in errorObj) {
-				if (errorObj.hasOwnProperty(key)) {
-					var array = errorObj[key];
-					for (var i = 0; i < array.length; i++) {
-						array[i].$touched = touched;
-					}
-				}
-			}
+		   form.$setUntouched(!touched);
 		},
 		getSuccessObj: function() {
 			var status = {

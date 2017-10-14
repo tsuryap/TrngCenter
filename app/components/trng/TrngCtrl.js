@@ -2,11 +2,7 @@ app.controller('TrngCtrl',['$scope','UtilServices','DashboardService','$timeout'
 	$scope.status = UtilServices.getSuccessObj();
 	$scope.resetForm = function(form){
 		UtilServices.hideOrShowErrors(form,false);
-		$scope.trngObj = {
-			trngName: '',
-			tutorName: '',
-			description: ''
-		};
+		$scope.trngObj = {};
 	};
 	$scope.saveForm = function(form){
 		if(form.$invalid) {
