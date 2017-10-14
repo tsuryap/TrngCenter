@@ -42559,7 +42559,7 @@ app.controller('DashboardCtrl',['$scope','DashboardService',function($scope,Dash
 }]);
 app.factory('DashboardService', ['$http', function($http) {
     var obj = {
-        traingList: [{
+        traingList: [],/* [{
                 trngName: 'Angular 1.x Complete walkthrough',
                 tutorName: 'Surya',
                 votes: 0,
@@ -42573,7 +42573,7 @@ app.factory('DashboardService', ['$http', function($http) {
                 date: undefined
 
             }
-        ],
+        ],*/
         test: 'testapp'
     };
     return obj;
@@ -42606,18 +42606,34 @@ app.controller('NavCtrl', ['$scope',function($scope){
         }
 	];
 }]);
-app.controller('TrngCtrl',['$scope','UtilServices',function($scope,UtilServices){
+app.controller('TrngCtrl',['$scope','UtilServices','DashboardService','$timeout',function($scope,UtilServices,DashboardService,$timeout){
+	$scope.status = UtilServices.getSuccessObj();
 	$scope.resetForm = function(form){
-		$scope.trngObj = {};
 		UtilServices.hideOrShowErrors(form,false);
+		$scope.trngObj = {
+			trngName: '',
+			tutorName: '',
+			description: ''
+		};
 	};
 	$scope.saveForm = function(form){
 		if(form.$invalid) {
 			UtilServices.hideOrShowErrors(form,true);
 			return false;
 		}
-
-	};	
+		var trngObj =$scope.trngObj;
+		trngObj.votes = 0;
+		trngObj.date = new Date();
+		trngObj.trngId = Math.floor((Math.random() * 10000) + 1);
+		console.log(trngObj);
+		DashboardService.traingList.push(trngObj);
+		$scope.status.success = true;
+		$scope.status.successMsg = "Traning Saved Success fully";
+		$scope.resetForm(form);
+		$timeout(function(){
+			$scope.status = UtilServices.getSuccessObj();
+		},5000);
+	};
 }]);
 app.directive('starSymbol', function(){
 	// Runs during compile
@@ -42647,18 +42663,28 @@ app.service('Constants', ['$http', function($http){
 		myappName : 'test'
 	}
 }]);
-app.factory('UtilServices', function(){
+app.factory('UtilServices', function() {
+
 	var obj = {
-		hideOrShowErrors: function(form,touched){
+		hideOrShowErrors: function(form, touched) {
 			var errorObj = form.$error;
-			for(var key in errorObj) {
-				if(errorObj.hasOwnProperty(key)){
+			for (var key in errorObj) {
+				if (errorObj.hasOwnProperty(key)) {
 					var array = errorObj[key];
-					for(var i= 0;i< array.length;i++){
+					for (var i = 0; i < array.length; i++) {
 						array[i].$touched = touched;
 					}
 				}
-		    }
+			}
+		},
+		getSuccessObj: function() {
+			var status = {
+				success: false,
+				failure: false,
+				successMsg: '',
+				failureMsg: ''
+			};
+			return status;
 		}
 	}
 	return obj;
