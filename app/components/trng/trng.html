@@ -27,9 +27,11 @@
                             <div class="col-md-4">
                                 <label for="usr"><star-symbol></star-symbol>Tutor Name:</label>
                             </div>
-                            <div class="col-md-6">
-                                <div class='redClr' ng-show='trngForm.tutorName.$error.required == true && trngForm.tutorName.$touched'> <b>This field is mandatory</b></div>
-                    <div class='redClr' ng-show='trngForm.tutorName.$error.maxlength == true && trngForm.tutorName.$touched'><b> Max Length exceeded</b></div>
+                            <div class="col-md-6">                                
+                                <div ng-messages='trngForm.tutorName.$error' ng-if='trngForm.tutorName.$touched'>
+                                    <div  class='redClr' ng-message="required"> <b>This field is mandatory</b></div>
+                                    <div  class='redClr' ng-message="maxlength"><b> Max Length exceeded</b></div>
+                                </div>
                             </div>
                         </div>
                         <input type="text" class="form-control" ng-model='trngObj.tutorName' 
@@ -44,14 +46,15 @@
                             <div class="col-md-1">
                                 <label for="comment"><star-symbol></star-symbol>Description:</label>
                             </div>
-                            <div class="col-md-6">
-                                <div class='redClr' ng-show='trngForm.description.$error.required == true && trngForm.description.$touched'> <b>This field is mandatory</b></div>
-                    <div class='redClr' ng-show='trngForm.description.$error.maxlength == true && trngForm.description.$touched' ng-maxlength=500> <b>Max Length exceeded</b></div>
-                    </div>
+                            <div class="col-md-6">                                
+                                <div ng-messages='trngForm.description.$error' ng-if='trngForm.description.$touched'>
+                                    <div  class='redClr' ng-message="required"> <b>This field is mandatory</b></div>
+                                    <div  class='redClr' ng-message="maxlength"><b> Max Length exceeded</b></div>
+                                </div>
                             </div>
                         </div>
                         <textarea class="form-control" rows="5" ng-model='trngObj.description' 
-                        name='description' ng-required=true></textarea>                         
+                        name='description' ng-required=true ng-maxlength=100></textarea>                         
                 </div>
             </div>
             <div class='row margin-top-10'>
