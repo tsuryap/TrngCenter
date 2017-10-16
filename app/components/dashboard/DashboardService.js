@@ -1,6 +1,6 @@
 app.factory('DashboardService', ['$http', function($http) {
     var obj = {
-        traingList: [{
+        traingList: [],/* [{
                 trngName: 'Angular 1.x Complete walkthrough',
                 tutorName: 'Surya',
                 votes: 0,
@@ -14,7 +14,7 @@ app.factory('DashboardService', ['$http', function($http) {
                 date: undefined
 
             }
-        ],
+        ],*/
         test: 'testapp'
     };
     return obj;
