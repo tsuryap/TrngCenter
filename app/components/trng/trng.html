@@ -3,7 +3,10 @@
         <div class="panel-heading">Add/Update Training</div>
         <div class="panel-body">
            <div class="row" scope="" onload="">
-           		<div class='col-md-12'  ng-include="'app/components/common/status.html'">
+           		<!--<div class='col-md-12'  ng-include="'app/components/common/status.html'">
+           		</div> -->
+           		<div class='col-md-12'>
+           			<status-bar msg='status'> </status-bar>
            		</div>
            </div>
            <form name='trngForm'>
@@ -73,6 +76,9 @@
             </div>
            </form>
         </div>
+    </div>
+    <div>
+    	<status-bar msg='status2'> </status-bar>
     </div>
 </div>
 

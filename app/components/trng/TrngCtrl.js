@@ -16,10 +16,11 @@ app.controller('TrngCtrl',['$scope','UtilServices','DashboardService','$timeout'
 		console.log(trngObj);
 		DashboardService.traingList.push(trngObj);
 		$scope.status.success = true;
-		$scope.status.successMsg = "Traning Saved Success fully";
+		$scope.status.successMsg = "Traning Saved Success fullysdsdsdsds";
 		$scope.resetForm(form);
 		$timeout(function(){
 			$scope.status = UtilServices.getSuccessObj();
 		},5000);
 	};
+		
 }]);
