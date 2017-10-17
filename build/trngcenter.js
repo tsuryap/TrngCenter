@@ -42624,12 +42624,13 @@ app.controller('TrngCtrl',['$scope','UtilServices','DashboardService','$timeout'
 		console.log(trngObj);
 		DashboardService.traingList.push(trngObj);
 		$scope.status.success = true;
-		$scope.status.successMsg = "Traning Saved Success fully";
+		$scope.status.successMsg = "Traning Saved Success fullysdsdsdsds";
 		$scope.resetForm(form);
 		$timeout(function(){
 			$scope.status = UtilServices.getSuccessObj();
 		},5000);
 	};
+		
 }]);
 app.directive('starSymbol', function(){
 	// Runs during compile
@@ -42653,6 +42654,16 @@ app.directive('starSymbol', function(){
 		}*/
 	};
 });
+app.directive('statusBar', ['UtilServices', function(UtilServices){
+	// Runs during compile
+	return {
+		restrict: 'E',
+		templateUrl: "app/directives/statusBar/status.html",
+		scope: {
+			msg: '='
+		}
+	};
+}]);
 app.service('Constants', ['$http', function($http){
 	this.common_constants = {
 		homeImgUrl : 'assests/images/home.jpg',
