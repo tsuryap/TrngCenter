@@ -44742,14 +44742,13 @@ app.controller('TrngCtrl',['$scope','UtilServices','DashboardService','$timeout'
 		trngObj.votes = 0;
 		trngObj.date = new Date();
 		trngObj.trngId = Math.floor((Math.random() * 10000) + 1);
-		console.log(trngObj);
 		DashboardService.traingList.push(trngObj);
 		$scope.status.success = true;
 		$scope.status.successMsg = "Traning Saved Success fullysdsdsdsds";
 		$scope.resetForm(form);
-		$timeout(function(){
+		/*$timeout(function(){
 			$scope.status = UtilServices.getSuccessObj();
-		},5000);
+		},5000);*/
 	};
 		
 }]);
@@ -44782,8 +44781,13 @@ app.directive('statusBar', ['UtilServices', function(UtilServices){
 		templateUrl: "app/directives/statusBar/status.html",
 		scope: {
 			msg: '='
-		}
+		},
+		controller: 'statusBarCtrl'
 	};
+}]);
+app.controller('statusBarCtrl', ['Constants','$scope', function(Constants,$scope){
+	$scope.sucessImgUrl = Constants.common_constants.sucessImgUrl;
+	$scope.failureImgUrl = Constants.common_constants.sucessImgUrl;
 }]);
 app.service('Constants', ['$http', function($http){
 	this.common_constants = {

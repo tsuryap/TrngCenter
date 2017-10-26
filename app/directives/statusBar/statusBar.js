@@ -5,6 +5,7 @@ app.directive('statusBar', ['UtilServices', function(UtilServices){
 		templateUrl: "app/directives/statusBar/status.html",
 		scope: {
 			msg: '='
-		}
+		},
+		controller: 'statusBarCtrl'
 	};
 }]);

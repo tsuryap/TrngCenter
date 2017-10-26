@@ -13,14 +13,13 @@ app.controller('TrngCtrl',['$scope','UtilServices','DashboardService','$timeout'
 		trngObj.votes = 0;
 		trngObj.date = new Date();
 		trngObj.trngId = Math.floor((Math.random() * 10000) + 1);
-		console.log(trngObj);
 		DashboardService.traingList.push(trngObj);
 		$scope.status.success = true;
 		$scope.status.successMsg = "Traning Saved Success fullysdsdsdsds";
 		$scope.resetForm(form);
-		$timeout(function(){
+		/*$timeout(function(){
 			$scope.status = UtilServices.getSuccessObj();
-		},5000);
+		},5000);*/
 	};
 		
 }]);
