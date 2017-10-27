@@ -17,9 +17,9 @@ app.controller('TrngCtrl',['$scope','UtilServices','DashboardService','$timeout'
 		$scope.status.success = true;
 		$scope.status.successMsg = "Traning Saved Success fullysdsdsdsds";
 		$scope.resetForm(form);
-		/*$timeout(function(){
+		$timeout(function(){
 			$scope.status = UtilServices.getSuccessObj();
-		},5000);*/
+		},5000);
 	};
 		
 }]);

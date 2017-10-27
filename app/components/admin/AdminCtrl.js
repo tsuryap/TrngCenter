@@ -1,4 +1,4 @@
-app.controller('AdminCtrl',['$scope',function($scope){
-	//$scope.test10 = 'Iam from AdminCtrl';
-	$scope.test1 = 'I am from trng html';
+app.controller('AdminCtrl',['$scope','Constants',function($scope,Constants){
+	$scope.formsList = Constants.adminConstants.form_types;
+	console.log($scope.formsList);
 }]);

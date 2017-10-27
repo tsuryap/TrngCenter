@@ -1,1 +1,20 @@
-<h1> {{test1}} </h1>
+<div class='admin'>
+    <div class="panel panel-info">
+        <div class="panel-heading">Add/Modify</div>
+        <div class="panel-body adminBody">
+        	<div class="row form-group">
+        		   <label for="usr"><star-symbol></star-symbol>Select Form</label>
+        		    <select class="form-control"  ng-options="item as item.formDisplayName for item in formsList track by item.formValue" ng-model='formType'>
+                    </select>      		
+        	</div>
+        	<div class='row' ng-if='formType.formValue == "tutor"'>
+        		I am from tutor
+        	</div>
+        	<div class='row' ng-if='formType.formValue == "course"'>
+        		I am from Course
+        	</div>
+        </div>
+    </div>
+</div>
+
+                  

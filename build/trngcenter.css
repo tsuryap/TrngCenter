@@ -6839,6 +6839,14 @@ body{
 .redClr{
     color: red;
 }
+.admin{
+	margin: 20px 30px 20px 30px;	
+}
+.adminBody{
+	margin: 10px;
+}
+
+
 .cursorPointer {
 	cursor: pointer;
 }

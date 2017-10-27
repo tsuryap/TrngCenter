@@ -44668,9 +44668,9 @@ app.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRo
 	$urlRouterProvider.otherwise('/home');
 }]);
 
-app.controller('AdminCtrl',['$scope',function($scope){
-	//$scope.test10 = 'Iam from AdminCtrl';
-	$scope.test1 = 'I am from trng html';
+app.controller('AdminCtrl',['$scope','Constants',function($scope,Constants){
+	$scope.formsList = Constants.adminConstants.form_types;
+	console.log($scope.formsList);
 }]);
 app.controller('DashboardCtrl',['$scope','DashboardService',function($scope,DashboardService){
 	$scope.traingList = DashboardService.traingList;
@@ -44746,9 +44746,9 @@ app.controller('TrngCtrl',['$scope','UtilServices','DashboardService','$timeout'
 		$scope.status.success = true;
 		$scope.status.successMsg = "Traning Saved Success fullysdsdsdsds";
 		$scope.resetForm(form);
-		/*$timeout(function(){
+		$timeout(function(){
 			$scope.status = UtilServices.getSuccessObj();
-		},5000);*/
+		},5000);
 	};
 		
 }]);
@@ -44795,7 +44795,13 @@ app.service('Constants', ['$http', function($http){
 		myappName : 'test',
 		sucessImgUrl : 'assests/images/accept.png',
 		failImgUrl : 'assests/images/cancel2.png'
-	}
+	};
+	this.adminConstants = {
+		form_types: [
+ 			{formValue: 'tutor',formDisplayName: 'Add Tutor'},
+ 			{formValue: 'course',formDisplayName: 'Add Training'}
+		]
+	};
 }]);
 app.factory('UtilServices', function() {
 
