@@ -7,11 +7,11 @@
         		    <select class="form-control"  ng-options="item as item.formDisplayName for item in formsList track by item.formValue" ng-model='formType'>
                     </select>      		
         	</div>
-        	<div class='row' ng-if='formType.formValue == "tutor"'>
-        		I am from tutor
+        	<div class='row' ng-if='formType.formValue == "tutor"' ng-include="'app/components/admin/tutor.html'">
+        		
         	</div>
-        	<div class='row' ng-if='formType.formValue == "course"'>
-        		I am from Course
+        	<div class='row' ng-if='formType.formValue == "course"' ng-include="'app/components/admin/course.html'">
+        		
         	</div>
         </div>
     </div>
