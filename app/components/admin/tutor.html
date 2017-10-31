@@ -1,34 +1,36 @@
-<div>
-	<div class="row panel-heading">
-		<div class="col-md-1">
-			Name:
+<div ng-form='tutorform'>
+	<div class="row">
+		<div class="col-md-6">
+			<div class="form-group">
+			   <label for="usr"><star-symbol></star-symbol>Name:</label>
+			   <input type="text" name="tutorName" class="form-control"  ng-model='tutorObj.tutorName'>
+			</div>{{tutorObj.tutorName}}
 		</div>
-		<div class="col-md-2">
-			<input type="text" name="tutorName">
+		<div class="col-md-6">
+			<div class="form-group">
+			  <label for="usr"><star-symbol></star-symbol>Qualification:</label>
+			  <input type="text" name="qualification" class="form-control" ng-model='tutorObj.qualification'>
+		    </div>
 		</div>
-		<div class="col-md-1">
-			Qualification:
-		</div>
-		<div class="col-md-2">
-			<input type="text" name="tutorQual">
-		</div>
-		<div class="col-md-1">
-			Phone:
-		</div>
-		<div class="col-md-2">
-			<input type="text" name="tutorName">
-		</div>		
 	</div>
-	<div class="row panel-body">
-		<div class="col-md-1">
-			E-Mail:
+	<div class="row">
+		<div class="col-md-6">
+			<div class="form-group">
+			   <label for="usr"><star-symbol></star-symbol>E-Mail:</label>
+			  <input type="text" name="email" class="form-control" ng-model='tutorObj.email'>
+		    </div>
 		</div>
-		<div class="col-md-2">
-			<input type="text" name="tutorQual">
-		</div>
-		<div class="col-md-2">
-			<button>Add</button>
-			<button>Reset</button>
+		<div class="col-md-6">
+			<div class="form-group">
+			   <label for="usr"><star-symbol></star-symbol>Phone:</label>
+			  <input type="text" name="phone" class="form-control" ng-model='tutorObj.phone'>
+		    </div>
+		</div>	
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<button class="btn btn-primary" ng-click='addForm(tutorform,"tutor")'>Add</button>
+			<button class="btn btn-default" ng-click='resetForm()'>Reset</button>
 		</div>
 	</div>
 </div>

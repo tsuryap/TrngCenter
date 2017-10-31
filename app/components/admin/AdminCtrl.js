@@ -1,4 +1,13 @@
-app.controller('AdminCtrl',['$scope','Constants',function($scope,Constants){
+app.controller('AdminCtrl',['$scope','Constants','AdminService',function($scope,Constants,AdminService){
 	$scope.formsList = Constants.adminConstants.form_types;
-	console.log($scope.formsList);
+	$scope.tutorObj = {};
+	$scope.addForm = function(form,formName){
+		if(form.$invalid) {
+			UtilServices.hideOrShowErrors(form,true);
+			return false;
+		}
+		if(formName === 'tutor') {
+			AdminService.tutorList.push($scope.tutorObj);
+		}
+	};
 }]);

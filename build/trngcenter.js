@@ -44668,10 +44668,26 @@ app.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRo
 	$urlRouterProvider.otherwise('/home');
 }]);
 
-app.controller('AdminCtrl',['$scope','Constants',function($scope,Constants){
+app.controller('AdminCtrl',['$scope','Constants','AdminService',function($scope,Constants,AdminService){
 	$scope.formsList = Constants.adminConstants.form_types;
-	console.log($scope.formsList);
+	$scope.tutorObj = {};
+	$scope.addForm = function(form,formName){
+		if(form.$invalid) {
+			UtilServices.hideOrShowErrors(form,true);
+			return false;
+		}
+		if(formName === 'tutor') {
+			AdminService.tutorList.push($scope.tutorObj);
+		}
+	};
 }]);
+app.factory('AdminService', function(){
+	var obj = {
+		tutorList: [],
+		courseList: []
+	};
+	return obj;
+})
 app.controller('DashboardCtrl',['$scope','DashboardService',function($scope,DashboardService){
 	$scope.traingList = DashboardService.traingList;
 	$scope.doVote = function(voteType, trngItem) {
@@ -44680,21 +44696,7 @@ app.controller('DashboardCtrl',['$scope','DashboardService',function($scope,Dash
 }]);
 app.factory('DashboardService', ['$http', function($http) {
     var obj = {
-        traingList: [],/* [{
-                trngName: 'Angular 1.x Complete walkthrough',
-                tutorName: 'Surya',
-                votes: 0,
-                date: undefined
-
-            },
-            {
-                trngName: 'Angular 2.x Complete walkthrough',
-                tutorName: 'Test',
-                votes: 0,
-                date: undefined
-
-            }
-        ],*/
+        traingList: [],
         test: 'testapp'
     };
     return obj;
@@ -44727,8 +44729,9 @@ app.controller('NavCtrl', ['$scope',function($scope){
         }
 	];
 }]);
-app.controller('TrngCtrl',['$scope','UtilServices','DashboardService','$timeout',function($scope,UtilServices,DashboardService,$timeout){
+app.controller('TrngCtrl',['$scope','UtilServices','DashboardService','$timeout','AdminService',function($scope,UtilServices,DashboardService,$timeout,AdminService){
 	$scope.status = UtilServices.getSuccessObj();
+	$scope.tutorList = AdminService.tutorList;
 	$scope.resetForm = function(form){
 		UtilServices.hideOrShowErrors(form,false);
 		$scope.trngObj = {};

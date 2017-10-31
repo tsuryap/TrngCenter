@@ -1,5 +1,6 @@
-app.controller('TrngCtrl',['$scope','UtilServices','DashboardService','$timeout',function($scope,UtilServices,DashboardService,$timeout){
+app.controller('TrngCtrl',['$scope','UtilServices','DashboardService','$timeout','AdminService',function($scope,UtilServices,DashboardService,$timeout,AdminService){
 	$scope.status = UtilServices.getSuccessObj();
+	$scope.tutorList = AdminService.tutorList;
 	$scope.resetForm = function(form){
 		UtilServices.hideOrShowErrors(form,false);
 		$scope.trngObj = {};
