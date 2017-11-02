@@ -1,15 +1,15 @@
-<div ng-form='tutorform'>
+<div ng-form='courseForm'>
 	<div class="row">		
 		<div class="col-md-6">			
 			<div class="form-group">
 			   <label for="usr"><star-symbol></star-symbol>Course:</label>
-			   <input type="text" name="tutorName" class="form-control"  ng-model='tutorObj.tutorName'>
+			   <input type="text" name="courseName" class="form-control"  ng-model='courseObj.courseName'>
 			</div>
 		</div>		
 		<div class="col-md-6">			
 			<div class="form-group">
 			   <label for="usr"><star-symbol></star-symbol>Duration:</label>
-			   <input type="text" name="tutorName" class="form-control"  ng-model='tutorObj.tutorName'>
+			   <input type="text" name="duration" class="form-control"  ng-model='courseObj.duration'>
 			</div>
 		</div>
 	</div>
@@ -17,13 +17,15 @@
 		<div class="col-md-6">			
 			<div class="form-group">
 			   <label for="usr"><star-symbol></star-symbol>Fees:</label>
-			   <input type="text" name="tutorName" class="form-control"  ng-model='tutorObj.tutorName'>
+			   <input type="text" name="fees" class="form-control"  ng-model='courseObj.fees'>
 			</div>
-		</div>		
+		</div>	
+	</div>
+	<div class="row">
 		<div class="col-md-6">			
 			<div class="form-group">
-			   <button class="btn btn-primary">Add</button>
-			   <button class="btn btn-default" >Reset</button>
+			   <button class="btn btn-primary" ng-click='addForm(courseForm,"course")'>Add</button>
+			   <button class="btn btn-default" ng-click='resetForm(courseForm,"course")'>Reset</button>
 			</div>
 		</div>
 	</div>	

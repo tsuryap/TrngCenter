@@ -44668,22 +44668,32 @@ app.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRo
 	$urlRouterProvider.otherwise('/home');
 }]);
 
-app.controller('AdminCtrl',['$scope','Constants','AdminService','UtilServices',function($scope,Constants,AdminService,UtilServices){
+app.controller('AdminCtrl', ['$scope', 'Constants', 'AdminService', 'UtilServices', function($scope, Constants, AdminService, UtilServices) {
 	$scope.formsList = Constants.adminConstants.form_types;
 	$scope.tutorObj = {};
-	$scope.phoneNumbr = /^\+?\d{2}[- ]?\d{3}[- ]?\d{5}$/;
-	$scope.resetForm = function(form){
-		UtilServices.hideOrShowErrors(form,false);
-		$scope.tutorObj = {};
+	$scope.courseObj = {};
+	$scope.phoneNumbr = Constants.common_constants.phoneRegex;
+	$scope.resetForm = function(form, formName) {
+		UtilServices.hideOrShowErrors(form, false);
+		if (formName === 'tutor') {
+			$scope.tutorObj = {};
+			$scope.tutorObj.email = "";
+			$scope.tutorObj.phone = "";
+		}else if(formName === 'course'){
+			$scope.courseObj = {};
+		}
 	};
-	$scope.addForm = function(form,formName){
-		if(form.$invalid) {
-			UtilServices.hideOrShowErrors(form,true);
+	$scope.addForm = function(form, formName) {
+		if (form.$invalid) {
+			UtilServices.hideOrShowErrors(form, true);
 			return false;
 		}
-		if(formName === 'tutor') {
+		if (formName === 'tutor') {
 			AdminService.tutorList.push($scope.tutorObj);
+		}else if(formName === 'course'){
+			AdminService.courseList.push($scope.courseObj);
 		}
+		debugger;
 	};
 }]);
 app.factory('AdminService', function(){
@@ -44737,6 +44747,7 @@ app.controller('NavCtrl', ['$scope',function($scope){
 app.controller('TrngCtrl',['$scope','UtilServices','DashboardService','$timeout','AdminService',function($scope,UtilServices,DashboardService,$timeout,AdminService){
 	$scope.status = UtilServices.getSuccessObj();
 	$scope.tutorList = AdminService.tutorList;
+	$scope.courseList = AdminService.courseList;
 	$scope.resetForm = function(form){
 		UtilServices.hideOrShowErrors(form,false);
 		$scope.trngObj = {};
@@ -44802,7 +44813,8 @@ app.service('Constants', ['$http', function($http){
 		homeImgUrl : 'assests/images/home.jpg',
 		myappName : 'test',
 		sucessImgUrl : 'assests/images/accept.png',
-		failImgUrl : 'assests/images/cancel2.png'
+		failImgUrl : 'assests/images/cancel2.png',
+		phoneRegex: /^\+?\d{2}[- ]?\d{3}[- ]?\d{5}$/
 	};
 	this.adminConstants = {
 		form_types: [
@@ -44810,6 +44822,7 @@ app.service('Constants', ['$http', function($http){
  			{formValue: 'course',formDisplayName: 'Add Training'}
 		]
 	};
+
 }]);
 app.factory('UtilServices', function() {
 

@@ -41,14 +41,12 @@
 					<div class="col-md-8">
 						<div ng-messages='tutorform.email.$error' ng-if='tutorform.email.$touched'>
                         	<div  class='redClr' ng-message="required"> <b>This field is mandatory</b></div>
+                        	<div  class='redClr' ng-message="email"> <b>Not valid email</b></div>
                     	</div>
-                    	<div ng-messages='tutorform.email.$error' ng-if='tutorform.email.$error.email'>
-                        	<div class="redClr" ng-show="tutorform.email.$error.email">
-        					<b>Not valid email</b></div>
-                        </div>
+                    	
 					</div>
 				</div>
-			  <input type="email" name="email" class="form-control" ng-model='tutorObj.email' ng-required=true>
+			  <input  name="email" class="form-control" ng-model='tutorObj.email' ng-required=true>
 		    </div>
 		</div>
 		<div class="col-md-6">
@@ -60,21 +58,18 @@
 			   		<div class="col-md-8">
 						<div ng-messages='tutorform.phone.$error' ng-if='tutorform.phone.$touched'>
                         	<div  class='redClr' ng-message="required"> <b>This field is mandatory</b></div>
+                        	<div  class='redClr' ng-message="pattern"> <b>Not Valid Phone Number</b></div>
                     	</div>
-                    	<div ng-messages='tutorform.phone.$error' ng-if='tutorform.phone.$error.pattern'>
-                        	<div class="redClr" ng-show="tutorform.phone.$error.pattern">
-        					<b>Not valid Phone Number</b></div>
-                        </div>
 			   		</div>
 				</div>
-			  <input type="text" name="phone" class="form-control" ng-model='tutorObj.phone' ng-pattern="phoneNumbr">
+			  <input type="text" name="phone" class="form-control" ng-model='tutorObj.phone' ng-required=true />
 		    </div>
 		</div>	
 	</div>
 	<div class="row">
 		<div class="col-md-12">
 			<button class="btn btn-primary" ng-click='addForm(tutorform,"tutor")'>Add</button>
-			<button class="btn btn-default" ng-click='resetForm(tutorform)'>Reset</button>
+			<button class="btn btn-default" ng-click='resetForm(tutorform,"tutor")'>Reset</button>
 		</div>
 	</div>
 </div>

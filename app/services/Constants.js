@@ -3,7 +3,8 @@ app.service('Constants', ['$http', function($http){
 		homeImgUrl : 'assests/images/home.jpg',
 		myappName : 'test',
 		sucessImgUrl : 'assests/images/accept.png',
-		failImgUrl : 'assests/images/cancel2.png'
+		failImgUrl : 'assests/images/cancel2.png',
+		phoneRegex: /^\+?\d{2}[- ]?\d{3}[- ]?\d{5}$/
 	};
 	this.adminConstants = {
 		form_types: [
@@ -11,4 +12,5 @@ app.service('Constants', ['$http', function($http){
  			{formValue: 'course',formDisplayName: 'Add Training'}
 		]
 	};
+
 }]);

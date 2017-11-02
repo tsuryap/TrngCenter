@@ -24,7 +24,9 @@
                         </div>
                         </div>
                         </div>
-                        <input type="text" class="form-control" ng-model='trngObj.trngName' name='trngName' ng-required=true ng-maxlength=100>                        
+                        <select class="form-control" ng-model='trngObj.trngName' name='trngName' ng-required=true>
+                            <option ng-repeat="item in courseList">{{item.courseName}}</option>
+                        </select>                        
                     </div>
                     
                 </div>
@@ -41,7 +43,7 @@
                                 </div>
                             </div>
                         </div>
-                        <select class="form-control" ng-model='trngObj.tutorName' ng-required=true>
+                        <select class="form-control" ng-model='trngObj.tutorName' name='tutorName' ng-required=true>
                             <option ng-repeat="item in tutorList">{{item.tutorName}}</option>
                         </select> 
                     </div>                     
