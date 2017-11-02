@@ -1,28 +1,30 @@
-<div>
-	<div class="row panel-heading">
-		<div class="col-md-1">
-			Course:
-		</div>
-		<div class="col-md-2">
-			<input type="text" name="tutorName">
-		</div>
-		<div class="col-md-1">
-			Duration:
-		</div>
-		<div class="col-md-2">
-			<input type="text" name="tutorQual">
-		</div>
-		<div class="col-md-1">
-			Fees:
-		</div>
-		<div class="col-md-2">
-			<input type="text" name="tutorName">
+<div ng-form='tutorform'>
+	<div class="row">		
+		<div class="col-md-6">			
+			<div class="form-group">
+			   <label for="usr"><star-symbol></star-symbol>Course:</label>
+			   <input type="text" name="tutorName" class="form-control"  ng-model='tutorObj.tutorName'>
+			</div>
 		</div>		
-	</div>
-	<div class="row panel-body">		
-		<div class="col-md-2">
-			<button>Add</button>
-			<button>Reset</button>
+		<div class="col-md-6">			
+			<div class="form-group">
+			   <label for="usr"><star-symbol></star-symbol>Duration:</label>
+			   <input type="text" name="tutorName" class="form-control"  ng-model='tutorObj.tutorName'>
+			</div>
 		</div>
 	</div>
+	<div class="row">		
+		<div class="col-md-6">			
+			<div class="form-group">
+			   <label for="usr"><star-symbol></star-symbol>Fees:</label>
+			   <input type="text" name="tutorName" class="form-control"  ng-model='tutorObj.tutorName'>
+			</div>
+		</div>		
+		<div class="col-md-6">			
+			<div class="form-group">
+			   <button class="btn btn-primary">Add</button>
+			   <button class="btn btn-default" >Reset</button>
+			</div>
+		</div>
+	</div>	
 </div>
