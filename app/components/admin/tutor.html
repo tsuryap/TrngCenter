@@ -5,14 +5,12 @@
 				<div class="row">
 					<div class="col-md-2">
 			   			<label for="usr"><star-symbol></star-symbol>Name:</label>
-			   		</div>
-			   		<div class="col-md-8">
-			   			<div ng-messages='tutorform.tutorName.$error' ng-if='tutorform.tutorName.$touched'>
-                        	<div  class='redClr' ng-message="required"> <b>This field is mandatory</b></div>
-                        </div>
-					</div>
+			   		</div>			   		
 				</div>
 			   <input type="text" name="tutorName" class="form-control"  ng-model='tutorObj.tutorName' ng-required=true >
+			   <div ng-messages='tutorform.tutorName.$error' ng-if='tutorform.tutorName.$touched'>
+               		<div  class='redClr' ng-message="required"> <b>This field is mandatory</b></div>
+               </div>
 			</div>
 		</div>
 		<div class="col-md-6">
@@ -20,14 +18,12 @@
 				<div class="row">
 					<div class="col-md-2">
 			  			<label for="usr"><star-symbol></star-symbol>Qualification:</label>
-			  		</div>
-			  		<div class="col-md-8">
-						<div ng-messages='tutorform.qualification.$error' ng-if='tutorform.qualification.$touched'>
-                        	<div  class='redClr' ng-message="required"> <b>This field is mandatory</b></div>
-                        </div>
-			  		</div>
+			  		</div>			  		
 				</div>
 			  <input type="text" name="qualification" class="form-control" ng-model='tutorObj.qualification' ng-required=true>
+			  <div ng-messages='tutorform.qualification.$error' ng-if='tutorform.qualification.$touched'>
+              		<div  class='redClr' ng-message="required"> <b>This field is mandatory</b></div>
+              </div>
 		    </div>
 		</div>
 	</div>
@@ -37,16 +33,13 @@
 				<div class="row">
 					<div class="col-md-2">
 			   			<label for="usr"><star-symbol></star-symbol>E-Mail:</label>
-					</div>
-					<div class="col-md-8">
-						<div ng-messages='tutorform.email.$error' ng-if='tutorform.email.$touched'>
-                        	<div  class='redClr' ng-message="required"> <b>This field is mandatory</b></div>
-                        	<div  class='redClr' ng-message="email"> <b>Not valid email</b></div>
-                    	</div>
-                    	
-					</div>
+					</div>					
 				</div>
 			  <input  name="email" class="form-control" ng-model='tutorObj.email' ng-required=true>
+			  <div ng-messages='tutorform.email.$error' ng-if='tutorform.email.$touched'>
+            	<div  class='redClr' ng-message="required"> <b>This field is mandatory</b></div>
+            	<div  class='redClr' ng-message="email"> <b>Not valid email</b></div>
+        		</div>
 		    </div>
 		</div>
 		<div class="col-md-6">
@@ -54,15 +47,13 @@
 				<div class="row">
 					<div class="col-md-2">
 			   			<label for="usr"><star-symbol></star-symbol>Phone:</label>
-			   		</div>
-			   		<div class="col-md-8">
-						<div ng-messages='tutorform.phone.$error' ng-if='tutorform.phone.$touched'>
+			   		</div>			   		
+				</div>
+			  <input type="text" name="phone" class="form-control" ng-model='tutorObj.phone' ng-required=true />
+		    	<div ng-messages='tutorform.phone.$error' ng-if='tutorform.phone.$touched'>
                         	<div  class='redClr' ng-message="required"> <b>This field is mandatory</b></div>
                         	<div  class='redClr' ng-message="pattern"> <b>Not Valid Phone Number</b></div>
                     	</div>
-			   		</div>
-				</div>
-			  <input type="text" name="phone" class="form-control" ng-model='tutorObj.phone' ng-required=true />
 		    </div>
 		</div>	
 	</div>
